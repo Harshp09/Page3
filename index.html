@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Recruitment Solution - Home</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #000;
+  padding: 20px;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: #FFD700;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+  color: #000;
+  font-size: 36px;
+}
+
+.container p {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.container h2 {
+  color: #000;
+}
+
+.container ul.features {
+  margin-top: 20px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.container ul.features li {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background: #000;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="homepage">
+    <div class="container">
+      <h1>Welcome to our Online Recruitment Solution</h1>
+      <p>An innovative platform designed to simplify the hiring process for HR professionals and hiring managers.</p>
+      <ul class="features">
+        <li>
+          <h2>Feature 1: Job Posting</h2>
+          <p>Effortlessly create and publish job postings on multiple job boards and platforms. A user-friendly interface allows you to enter job details, requirements, and qualifications with ease.</p>
+        </li>
+        <li>
+          <h2>Feature 2: Resume Management</h2>
+          <p>Centralized repository for storing and organizing resumes. Powerful tools for parsing, indexing, and categorizing resumes make it simple to search and retrieve relevant candidate information.</p>
+        </li>
+        <li>
+          <h2>Feature 3: Interview Scheduling</h2>
+          <p>Simplify interview scheduling with automated tools. Seamless integration with popular calendar systems enables efficient coordination of interview invitations and time slots.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+  </footer>
+  <script>
+    const homepageSection = document.getElementById("homepage");
+    homepageSection.style.opacity = 0;
+    let opacity = 0;
+    const fadeInInterval = setInterval(() => {
+      opacity += 0.01;
+      homepageSection.style.opacity = opacity;
+      if (opacity >= 1) {
+        clearInterval(fadeInInterval);
+      }
+    }, 10);
+    const featuresList = document.querySelector(".features");
+    const featuresListItems = featuresList.querySelectorAll("li");
+    let featureIndex = 0;
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      if (
+        featuresListItems[featureIndex].getBoundingClientRect().top <
+        triggerBottom
+      ) {
+        featuresListItems[featureIndex].classList.add("animate");
+        featureIndex++;
+      }
+    });
+  </script>
+</body>
+</html>
